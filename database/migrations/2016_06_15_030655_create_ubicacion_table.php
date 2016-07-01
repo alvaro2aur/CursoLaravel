@@ -12,6 +12,7 @@ class CreateUbicacionTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('ubicacion', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idestatus')->unsigned();
@@ -19,6 +20,7 @@ class CreateUbicacionTable extends Migration
             $table->string('nombre');
             $table->timestamps();
         });
+        
     }
 
     /**

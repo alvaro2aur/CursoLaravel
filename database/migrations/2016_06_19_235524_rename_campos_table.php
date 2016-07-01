@@ -12,10 +12,12 @@ class RenameCamposTable extends Migration
      */
     public function up()
     {
+        
         Schema::table('usuarios', function ($table) {
             $table->renameColumn('name', 'nombres');
             $table->renameColumn('email', 'correo');
         });
+        
     }
 
     /**

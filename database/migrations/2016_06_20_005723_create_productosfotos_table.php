@@ -12,12 +12,14 @@ class CreateProductosfotosTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('productosfotos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idproductos')->unsigned();
             $table->foreign('idproductos')->references('id')->on('productos');
             $table->timestamps();
         });
+        
     }
 
     /**

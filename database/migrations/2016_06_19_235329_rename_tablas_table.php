@@ -12,8 +12,10 @@ class RenameTablasTable extends Migration
      */
     public function up()
     {
+        
         Schema::rename('users', 'usuarios');
         Schema::rename('tipoususario', 'tipousuario');
+        
     }
 
     /**

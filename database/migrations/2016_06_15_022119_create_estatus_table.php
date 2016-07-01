@@ -12,11 +12,13 @@ class CreateEstatusTable extends Migration
      */
     public function up()
     {
+        
         Schema::create('estatus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->timestamps();
         });
+        
     }
 
     /**
