@@ -1,5 +1,9 @@
 <?php
 
+use App\Categorias;
+use App\Marcas;
+use App\Ubicacion;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,6 +15,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'UsuarioController@inicio');
+
+Route::get('info', function () {
+	return view('info');
 });
+
+Route::get('contacto', function () {
+	return view('contacto');
+});
+
+Route::get('productos', function () {
+	return view('productos');
+});
+
