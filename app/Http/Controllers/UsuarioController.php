@@ -17,7 +17,7 @@ class UsuarioController extends Controller
     	$categorias = Categorias::all();
 		$marcas = Marcas::all();
 		$ubicaciones = Ubicacion::all();
-		//$productos = Productos::all();
-	    return view('Usuarios.inicio', compact('categorias','marcas','ubicaciones'));
+		$productos = Productos::paginate(8);
+		return view('Usuarios.inicio', compact('categorias','marcas','ubicaciones','productos'));
     }
 }

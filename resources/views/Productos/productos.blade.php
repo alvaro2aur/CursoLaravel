@@ -1,19 +1,17 @@
 
+<hr>
+
 <div class="row">
+    <div class="col-lg-12">
+        <h3>Mas vendidos</h3>
+    </div>
+</div>
 
-	
-</div>	
-
-
-<div class="row well">
-	<div class="col-md-4 well">
-		
-	</div>
-	<div class="col-md-4 well">
-		
-	</div>
-	<div class="col-md-4 well">
-		
-	</div>
-	
+<div class="row text-center">
+	@include('Productos.masvendidos')
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        {{ $productos->render() }}
+    </div>
 </div>

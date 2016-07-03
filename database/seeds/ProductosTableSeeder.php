@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+
+use App\Estatus;
+use App\Usuarios;
+use App\Categorias;
+use App\Marcas;
+use App\Tipoproducto;
+use App\Productos;
 
 class ProductosTableSeeder extends Seeder
 {
@@ -13,20 +21,22 @@ class ProductosTableSeeder extends Seeder
     {
         $faker = Faker::create();
         $estatus = Estatus::lists('id')->all();
-        $tipousuario = TipoUsuario::lists('id')->all();
-        $ubicacion = Ubicacion::lists('id')->all();
-
-        for ($i=0; $i < 30 ; $i++) { 
-        	Usuarios::create([
-        		'nombre' => $faker->firstname,
-        		'correo' => $faker->unique()->email,
-        		'password' => $faker->unique()->password,
-        		'apellido' => $faker->lastname,
-        		'telefono' => $faker->unique()->phoneNumber,
+        $usuarios = Usuarios::lists('id')->all();
+        $categorias = Categorias::lists('id')->all();
+        $marcas = Marcas::lists('id')->all();
+        $tiposproductos = Tipoproducto::lists('id')->all();
+        
+        for ($i=0; $i < 25 ; $i++) { 
+        	Productos::create([
         		'idestatus' => $faker->randomElement($estatus),
-        		'idtipousuario' => $faker->randomElement($tipousuario),
-        		'idubicacion' => $faker->randomElement($ubicacion),
-        		'descripcion' => $faker->text($maxNbChars = 200),
+                'idusuario' => $faker->randomElement($usuarios),
+                'idcategorias' => $faker->randomElement($categorias),
+                'idmarcas' => $faker->randomElement($marcas),
+                'idtiposproductos' => $faker->randomElement($tiposproductos),
+                'nombre' => $faker->word,
+                'cantidad' => $faker->randomNumber(2),
+                'precio' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = NULL),
+        		'descripcion' => $faker->text($maxNbChars = 50),
                 ]);
         }
     }

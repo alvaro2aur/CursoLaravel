@@ -3,7 +3,10 @@
 	Ubicación
 	</a>
 		@foreach($ubicaciones as $ubicacion)
-			<a href="#" class="list-group-item">{{$ubicacion -> nombre}}</a>
+			<a href="#" class="list-group-item">
+			{{$ubicacion -> nombre}}
+			</a>
+
 		@endforeach
 
 </div>
