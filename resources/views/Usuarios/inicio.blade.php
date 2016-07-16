@@ -14,7 +14,7 @@
 		@include('Usuarios.categorias')
 	</div>
 	<div class="col-md-4">
-		<!--@include('Usuarios.marcas')-->
+		@include('Usuarios.marcas')
 	</div>
 	<div class="col-md-4">
 		@include('Usuarios.ubicacion')

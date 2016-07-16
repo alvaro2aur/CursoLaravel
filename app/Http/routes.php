@@ -17,6 +17,10 @@ use App\Ubicacion;
 
 Route::get('/', 'UsuarioController@inicio');
 
+Route::get('estatus', 'EstatusController@index');
+
+Route::get('categorias', 'CategoriasController@index');
+
 Route::get('info', function () {
 	return view('info');
 });
@@ -27,5 +31,10 @@ Route::get('contacto', function () {
 
 Route::get('productos', function () {
 	return view('productos');
+});
+
+/*
+Route::get('estatus', function () {
+	return view('Admin.Estatus.principal');
 });
 
