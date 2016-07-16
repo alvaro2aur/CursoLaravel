@@ -4,9 +4,9 @@
     <div class="thumbnail">
         <img src="http://placehold.it/800x500" alt="">
         <div class="caption">
-            <h6 class="pull-right">${{$producto->precio}}</h6>
-            <h4><a href="#">{{$producto->nombre}}</a></h4>
-            <p>{{$producto->descripcion}}</p>
+            <h6 class="pull-right">${{ $producto->precio }}</h6>
+            <h4><a href="#">{{ $producto->nombre }}</a></h4>
+            <p>{{ str_limit($producto->descripcion, 10) }}</p>
         </div>
     </div>
     

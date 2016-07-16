@@ -5,11 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Estatus;
+use App\Usuarios;
 use Validator;
-use Redirect;
 
-class EstatusController extends Controller
+class UsuarioSController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,10 @@ class EstatusController extends Controller
      */
     public function index()
     {
-        $estatus = Estatus::all();
-        return view('Admin.Estatus.principal', compact('estatus'));
+        //$usuarios=Usuarios::with('TipoEstatus', 'TipoUsuario',.....)->get(); ------ Forma mas eficiente de consultar
+
+        $usuarios = Usuarios::all();
+        return view('Admin.Usuarios.principal', compact('usuarios'));
     }
 
     /**
@@ -29,7 +30,7 @@ class EstatusController extends Controller
      */
     public function create()
     {
-        return view('Admin.Estatus.form'); 
+        return view('Admin.Usuarios.form'); 
     }
 
     /**
@@ -50,12 +51,9 @@ class EstatusController extends Controller
             return redirect()->back()->withErrors($validacion->errors())->withInput($data);
         }
 
-        $estatus = new Estatus($data);
-        $estatus -> save();
-        return redirect() -> to(route('admin.estatus.index'));
-
-
-
+        $usuarios = new Usuarios($data);
+        $usuarios -> save();
+        return redirect() -> to(route('admin.usuarios.index'));
     }
 
     /**
@@ -77,8 +75,7 @@ class EstatusController extends Controller
      */
     public function edit($id)
     {
-        $edit = Estatus::findOrFail($id);
-        return view('Admin.Estatus.form', compact('edit'));
+        //
     }
 
     /**
@@ -90,18 +87,7 @@ class EstatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=$request->all();
-        $rule=array(
-            'nombre'=>'required|unique:estatus|max:100|min:1'
-            );
-
-        $validacion=Validator::make($data,$rule);
-        if($validacion->fails()){
-            return redirect()->back()->withErrors($validacion->errors())->withInput($data);
-        }
-
-        Estatus::find($id)->update($request->all());
-        return redirect() -> to(route('admin.estatus.index'));
+        //
     }
 
     /**
@@ -112,9 +98,6 @@ class EstatusController extends Controller
      */
     public function destroy($id)
     {
-        $estatus=Estatus::find($id);
-        $estatus->delete();
-        return redirect() -> to(route('admin.estatus.index'));
-
+        //
     }
 }

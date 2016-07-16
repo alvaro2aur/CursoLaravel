@@ -8,7 +8,7 @@
 		<li><a href="{{asset('categorias')}}"><i class="glyphicon glyphicon-align-justify"></i>Categorias</a></li>
 		<li><a href="#"><i class="glyphicon glyphicon-user"></i>Tipo de usuarios</a></li>
 		<li><a href="#"><i class="glyphicon glyphicon-th"></i>Productos</a></li>
-		<li><a href="{{asset('estatus')}}"><i class="glyphicon glyphicon-tags"></i>Estatus</a></li>
+		<li><a href="{{asset('admin/estatus/')}}"><i class="glyphicon glyphicon-tags"></i>Estatus</a></li>
 		
 		<!--
 		<li><a href="tables.html"><i class="glyphicon glyphicon-list"></i> Tables</a></li>

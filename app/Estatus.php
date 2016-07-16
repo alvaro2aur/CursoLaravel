@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Estatus extends Model
 {
     protected $table = 'estatus';
-//    protected $fillable = ['nombre'];
+    protected $fillable = ['nombre'];
 }

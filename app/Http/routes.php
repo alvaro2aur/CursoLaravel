@@ -17,7 +17,11 @@ use App\Ubicacion;
 
 Route::get('/', 'UsuarioController@inicio');
 
-Route::get('estatus', 'EstatusController@index');
+//Route::get('estatus', 'EstatusController@index');
+
+Route::resource('admin/estatus', 'EstatusController');
+
+Route::resource('admin/usuarios', 'UsuarioSController');
 
 Route::get('categorias', 'CategoriasController@index');
 
