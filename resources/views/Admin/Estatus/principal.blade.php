@@ -35,4 +35,7 @@
     <a href="{{asset('admin/estatus/create')}}" class="btn btn-success">Crear </a>
 	</div>
 </div>
+
+@yield('form')
+
 @endsection

@@ -10,6 +10,8 @@
 
 <!-- styles -->
 <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+<link href="https://code.jquery.com/ui/1.10.3/themes/redmond/jquery-ui.css" rel="stylesheet" media="screen">
+
 
 	<title></title>
 </head>
@@ -89,26 +91,35 @@
 		  	@yield('cuerpo')
 		  </div>
 
-
-
-
+	
 
 
 <!-- jQuery -->
-    <script src="{{asset('js/jquery.js')}}"></script>
+
+	
+	<link href="{{asset('vendors/datatables/dataTables.bootstrap.css')}}" rel="stylesheet" media="screen">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('vendors/datatables/js/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendors/datatables/dataTables.bootstrap.js')}}"></script>
+    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('js/tables.js')}}"></script>
+
+    
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="https://code.jquery.com/jquery.js')}}"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="{{asset('js/custom.js')}}"></script>
+
+
+
+    
+    <!-- jQuery UI -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+
 
     <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-    </script>
+    
 
 </body>
 </html>

@@ -1,5 +1,8 @@
 @extends('Admin.index')
 @section('cuerpo')
+
+
+
 <div class="content-box-large">
 	<div class="panel-heading">
 	<div class="panel-title">Usuarios</div>
@@ -10,7 +13,7 @@
 	</div>
 </div>
 	<div class="panel-body">
-		<table class="table">
+		<table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-bordered" id="example">
       <thead>
         <tr>
           <th>#</th>
@@ -32,7 +35,7 @@
 	          <td>{{$usuario->telefono}}</td>
 	          <td>{{$usuario->correo}}</td>
 	          <td>{{$usuario->password}}</td>
-	          <td>{{$usuario->descripcion}}</td>
+	          <td>{{ str_limit($usuario->descripcion, 10) }}</td>
 	          <td>
 	          	<button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></button> 
 	          	<button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-circle"></button></td>
@@ -44,4 +47,5 @@
     <a href="{{asset('admin/usuarios/create')}}" class="btn btn-success">Crear </a>
 	</div>
 </div>
+
 @endsection

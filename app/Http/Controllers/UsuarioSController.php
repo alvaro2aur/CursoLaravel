@@ -43,7 +43,12 @@ class UsuarioSController extends Controller
     {
         $data=$request->all();
         $rule=array(
-            'nombre'=>'required|unique:estatus|max:100|min:1'
+            'nombre'=>'required|max:100|min:1',
+            'apellido'=>'required|max:100|min:1',
+            'telefono'=>'required|unique:telefono|max:100|min:1',
+            'correo'=>'required|unique:correo|max:100|min:1',
+            'password'=>'required|max:100|min:1',
+            'descripcion'=>'required|max:100|min:1'
             );
 
         $validacion=Validator::make($data,$rule);

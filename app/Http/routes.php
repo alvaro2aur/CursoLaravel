@@ -23,7 +23,17 @@ Route::resource('admin/estatus', 'EstatusController');
 
 Route::resource('admin/usuarios', 'UsuarioSController');
 
-Route::get('categorias', 'CategoriasController@index');
+Route::resource('admin/tipousuarios', 'TipousuarioController');
+
+Route::resource('admin/marcas', 'MarcasController');
+
+Route::resource('admin/categorias', 'CategoriasController');
+
+Route::resource('admin/productos', 'ProductosController');
+
+Route::resource('admin/tipoproductos', 'TipoproductosController');
+
+Route::resource('admin/ubicacion', 'UbicacionController');
 
 Route::get('info', function () {
 	return view('info');
@@ -35,6 +45,10 @@ Route::get('contacto', function () {
 
 Route::get('productos', function () {
 	return view('productos');
+});
+
+Route::get('admin', function () {
+	return view('Admin.principal');
 });
 
 /*
