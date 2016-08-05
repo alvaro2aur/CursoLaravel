@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Tipousuario;
+use App\TipoUsuario;
 use Validator;
 use Redirect;
 
@@ -18,7 +18,7 @@ class TipousuarioController extends Controller
      */
     public function index()
     {
-        $tipousuarios = Tipousuario::all();
+        $tipousuarios = TipoUsuario::all();
         return view('Admin.TipoUsuario.principal', compact('tipousuario'));
     }
 

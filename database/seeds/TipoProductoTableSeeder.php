@@ -16,13 +16,15 @@ class TipoProductoTableSeeder extends Seeder
      */
     public function run()
     {
-    	$faker=Faker::create();
-        $estatus=Estatus::lists('id')->all();
-        for($i=0; $i<30;$i++){
-            Tipoproducto::create([
-                'nombre'=>$faker->unique()->company,
-                'idestatus'=> $faker->randomElement($estatus),
-            ]); 
-        }
+        $faker = Faker::create();
+        $estatus = Estatus::lists('id')->all();
+        Tipoproducto::create([
+            'nombre'=>'Usado',
+            'idestatus' => $faker->randomElement($estatus),
+            ]);
+        Tipoproducto::create([
+            'nombre'=>'Nuevo',
+            'idestatus' => $faker->randomElement($estatus),
+            ]);
     }
 }

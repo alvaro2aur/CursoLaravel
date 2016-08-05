@@ -3,6 +3,9 @@
 use App\Categorias;
 use App\Marcas;
 use App\Ubicacion;
+use App\Estatus;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +38,10 @@ Route::resource('admin/tipoproductos', 'TipoproductosController');
 
 Route::resource('admin/ubicacion', 'UbicacionController');
 
+Route::get('admin', function () {
+	return view('Admin.principal');
+});
+
 Route::get('info', function () {
 	return view('info');
 });
@@ -47,12 +54,13 @@ Route::get('productos', function () {
 	return view('productos');
 });
 
-Route::get('admin', function () {
-	return view('Admin.principal');
+Route::get('prueba', function () {
+	$productos = App\Productos::all();
+	foreach ($productos as $producto) {
+		//$estatus = Estatus::find($producto->idestatus);
+		echo $producto->nombre . "el estatus es: " . $producto->estatus->nombre . "<br />";
+	}
+	
 });
 
-/*
-Route::get('estatus', function () {
-	return view('Admin.Estatus.principal');
-});
 

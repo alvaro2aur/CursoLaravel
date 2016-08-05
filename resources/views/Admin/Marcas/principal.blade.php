@@ -15,6 +15,7 @@
         <tr>
           <th>#</th>
           <th>Nombre</th>
+          <th>Estatus</th>
           <th></th>
         </tr>
       </thead>
@@ -23,6 +24,7 @@
       		<tr>
 	          <td>{{$marca->id}}</td>
 	          <td>{{$marca->nombre}}</td>
+	          <td>{{$marca->estatus->nombre}}</td>
 	          <td>
 	          	<a href="{{route('admin.marcas.edit', $marca->id)}}" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></a>
 	          	{!!Form::open(['route'=>['admin.marcas.destroy',$marca->id],'method'=>'DELETE'])!!}
@@ -32,7 +34,7 @@
 	    @endforeach
       </tbody>
     </table>
-    <a href="{{asset('admin/estatus/create')}}" class="btn btn-success">Crear </a>
+    <a href="{{asset('admin/marcas/create')}}" class="btn btn-success">Crear </a>
 	</div>
 </div>
 

@@ -37,11 +37,11 @@
 	          <td>{{$producto->cantidad}}</td>
 	          <td>${{$producto->precio}}</td>
 	          <td>{{ str_limit($producto->descripcion, 10) }}</td>
-	          <td>{{$producto->idestatus}}</td>
-	          <td>{{$producto->idusuario}}</td>
-	          <td>{{$producto->idcategorias}}</td>
-	          <td>{{$producto->idmarcas}}</td>
-	          <td>{{$producto->idtiposproductos}}</td>
+	          <td>{{$producto->estatus->nombre}}</td>
+	          <td>{{$producto->usuario->nombre}}</td>
+	          <td>{{$producto->categoria->nombre}}</td>
+	          <td>{{$producto->marca->nombre}}</td>
+	          <td>{{$producto->tipoproducto->nombre}}</td>
 	          <td>
 	          	<button type="button" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-pencil"></button> 
 	          	<button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove-circle"></button></td>
