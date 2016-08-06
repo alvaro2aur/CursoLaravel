@@ -24,8 +24,8 @@ class UsuariosTableSeeder extends Seeder
         for ($i=0; $i < 30 ; $i++) { 
         	Usuarios::create([
         		'nombre' => $faker->firstname,
-        		'correo' => $faker->unique()->email,
-        		'password' => $faker->unique()->password,
+        		'email' => $faker->unique()->email,
+        		'password' => bcrypt($faker->unique()->password),
         		'apellido' => $faker->lastname,
         		'telefono' => $faker->unique()->phoneNumber,
         		'idestatus' => $faker->randomElement($estatus),
@@ -34,6 +34,18 @@ class UsuariosTableSeeder extends Seeder
         		'descripcion' => $faker->text($maxNbChars = 200),
                 ]);
         }
+
+        Usuarios::create([
+                'nombre' => $faker->firstname,
+                'email' => "zxc@zxc.com",
+                'password' => bcrypt('123123'),
+                'apellido' => $faker->lastname,
+                'telefono' => $faker->unique()->phoneNumber,
+                'idestatus' => $faker->randomElement($estatus),
+                'idtipousuario' => $faker->randomElement($tipousuario),
+                'idubicacion' => $faker->randomElement($ubicacion),
+                'descripcion' => $faker->text($maxNbChars = 200),
+                ]);
 
     }
 }

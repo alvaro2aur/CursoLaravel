@@ -1,9 +1,4 @@
-@extends('index')
-@section('cuerpo')
-
-<h1>
-	Productos
-</h1>
 
 
-@endsection
+<h6>Nombre:{{$estatu->nombre}}</h6>
+

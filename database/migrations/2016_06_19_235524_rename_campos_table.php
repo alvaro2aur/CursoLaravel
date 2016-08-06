@@ -15,7 +15,7 @@ class RenameCamposTable extends Migration
         
         Schema::table('usuarios', function ($table) {
             $table->renameColumn('name', 'nombres');
-            $table->renameColumn('email', 'correo');
+            $table->renameColumn('email', 'email');
         });
         
     }
@@ -28,7 +28,7 @@ class RenameCamposTable extends Migration
     public function down()
     {
         Schema::table('usuarios', function ($table) {
-            $table->renameColumn('correo','email');
+            $table->renameColumn('email','email');
             $table->renameColumn('nombres','name');
         });
     }

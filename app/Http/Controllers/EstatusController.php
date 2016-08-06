@@ -66,7 +66,10 @@ class EstatusController extends Controller
      */
     public function show($id)
     {
-        //
+        $estatu = Estatus::findOrFail($id);
+        return view('productos', compact('estatu'));
+        //echo "vista del estatus $id";
+
     }
 
     /**
@@ -116,5 +119,18 @@ class EstatusController extends Controller
         $estatus->delete();
         return redirect() -> to(route('admin.estatus.index'));
 
+    }
+
+    public function buscar($id)
+    {
+        $keywords=input('keywords'),
+        $estatus=Estatus::all();
+        $BuscarEstatus = new \Illuminate\Database\Eloquent\Collection();
+        foreach ($estatus as $estatu) {
+            if (Str::contains(Str::lower($estatu->nombre),Str(lower($keywords)))) {
+                $BuscarEstatus.add($producto);
+            }
+        }
+        return view('Admin.Estatus.principal2')->with('BuscarEstatus', $BuscarEstatus);
     }
 }

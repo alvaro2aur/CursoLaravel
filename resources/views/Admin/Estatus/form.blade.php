@@ -1,5 +1,3 @@
-@extends('Admin.index')
-@section('cuerpo')
 
 @if(isset($edit))
 {!!Form::model($edit,['route'=>['admin.estatus.update', $edit->id],'method'=>'patch'])!!}
@@ -34,4 +32,3 @@
 
 
 
-@endsection

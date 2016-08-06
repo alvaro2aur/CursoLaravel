@@ -38,9 +38,8 @@ Route::resource('admin/tipoproductos', 'TipoproductosController');
 
 Route::resource('admin/ubicacion', 'UbicacionController');
 
-Route::get('admin', function () {
-	return view('Admin.principal');
-});
+Route::post('searchestatus', array('use'=>'EstatusController@buscar');
+
 
 Route::get('info', function () {
 	return view('info');
@@ -63,4 +62,15 @@ Route::get('prueba', function () {
 	
 });
 
+Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function() {
+	Route::get('/', function () {
+		return view('Admin.principal');
+	});
+	Route::resource('estatus', 'EstatusController');
+	Route::resource('usuarios', 'UsuarioSController');
+	Route::resource('productos', 'ProductosController');
+});
 
+Route::auth();
+
+Route::get('/home', 'HomeController@index');

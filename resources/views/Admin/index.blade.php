@@ -105,6 +105,7 @@
     <script src="{{asset('vendors/datatables/dataTables.bootstrap.js')}}"></script>
     <script src="{{asset('js/custom.js')}}"></script>
     <script src="{{asset('js/tables.js')}}"></script>
+	<script src="{{asset('js/ajaxtienda.js')}}"></script>
 
     
 
